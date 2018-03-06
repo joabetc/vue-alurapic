@@ -6,7 +6,6 @@
         <img :src="photo.url" :alt="photo.title" />
       </li>
     </ul>
-    
   </div>
 </template>
 
@@ -15,17 +14,11 @@ export default {
   data() {
     return {
       title: 'Alurapic',
-      photos: [
-        {
-          url: 'http://tudosobrecachorros.com.br/wp-content/uploads/cachorro-independente.jpg',
-          title: 'dog'
-        },
-        {
-          url: 'http://tudosobrecachorros.com.br/wp-content/uploads/cachorro-independente.jpg',
-          title: 'dog'
-        }
-      ]
+      photos: []
     }
+  },
+  created() {
+    alert('Component was created!');
   }
 }
 </script>
