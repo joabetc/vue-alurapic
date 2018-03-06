@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>{{title}}</h1>
-    <img src="http://tudosobrecachorros.com.br/como-criar-um-cachorro-independente-e-porque/" alt="" />
+    <h1>{{ title }}</h1>
+    <img v-bind:src="photo.url" v-bind:alt="photo.title" />
   </div>
 </template>
 
@@ -9,7 +9,11 @@
 export default {
   data() {
     return {
-      title: 'Alurapic'
+      title: 'Alurapic',
+      photo: {
+        url: 'http://tudosobrecachorros.com.br/wp-content/uploads/cachorro-independente.jpg',
+        title: 'dog'
+      }
     }
   }
 }
