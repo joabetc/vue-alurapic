@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1>{{ title }}</h1>
+  <div class="page-body">
+    <h1 class="centered">{{ title }}</h1>
     <ul>
-      <li v-for="photo of photos">
-        <img :src="photo.url" :alt="photo.title" />
+      <li class="photo-list" v-for="photo of photos">
+        <img class="photo-list-item" :src="photo.url" :alt="photo.title" />
       </li>
     </ul>
   </div>
@@ -26,5 +26,18 @@ export default {
 </script>
 
 <style>
-
+  .page-body {
+    font-family: Helvetica, sans-serif;
+    width: 96%;
+    margin: 0 auto;
+  }
+  .centered {
+    text-align: center;
+  }
+  .photo-list {
+    list-style: none;
+  }
+  .photo-list .photo-list-item {
+    display: inline-block;
+  }
 </style>
