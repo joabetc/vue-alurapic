@@ -1,7 +1,12 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <img :src="photo.url" :alt="photo.title" />
+    <ul>
+      <li v-for="photo of photos">
+        <img :src="photo.url" :alt="photo.title" />
+      </li>
+    </ul>
+    
   </div>
 </template>
 
@@ -10,10 +15,16 @@ export default {
   data() {
     return {
       title: 'Alurapic',
-      photo: {
-        url: 'http://tudosobrecachorros.com.br/wp-content/uploads/cachorro-independente.jpg',
-        title: 'dog'
-      }
+      photos: [
+        {
+          url: 'http://tudosobrecachorros.com.br/wp-content/uploads/cachorro-independente.jpg',
+          title: 'dog'
+        },
+        {
+          url: 'http://tudosobrecachorros.com.br/wp-content/uploads/cachorro-independente.jpg',
+          title: 'dog'
+        }
+      ]
     }
   }
 }
