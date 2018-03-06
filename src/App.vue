@@ -18,10 +18,9 @@ export default {
     }
   },
   created() {
-    this.$http.get('http://localhost:3000/v1/fotos');
+    this.$http.get('http://localhost:3000/v1/fotos')
       .then(res => res.json())
       .then(photos => this.photos = photos, err => console.log(err));
-    });
   }
 }
 </script>
