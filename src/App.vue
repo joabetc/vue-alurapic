@@ -1,9 +1,9 @@
 <template>
   <div class="page-body">
     <h1 class="centered">{{ title }}</h1>
-    <ul>
-      <li class="photo-list" v-for="photo of photos">
-        <img class="photo-list-item" :src="photo.url" :alt="photo.title" />
+    <ul class="photo-list">
+      <li class="photo-list-item" v-for="photo of photos">
+        <img :src="photo.url" :alt="photo.title" />
       </li>
     </ul>
   </div>
