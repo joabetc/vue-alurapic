@@ -18,7 +18,8 @@ export default {
     }
   },
   created() {
-    alert('Component was created!');
+    let promise = this.$http.get('http://localhost:3000/v1/fotos');
+    promise.then(res => console.log(res));
   }
 }
 </script>
