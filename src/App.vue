@@ -6,7 +6,7 @@
         <div class="panel">
           <h2 class="panel-title">{{ photo.titulo }}</h2>
           <div class="panel-content">
-            <img :src="photo.url" :alt="photo.title" />
+            <img class="responsive-image" :src="photo.url" :alt="photo.title" />
           </div>
         </div>
       </li>
@@ -44,6 +44,9 @@ export default {
   }
   .photo-list .photo-list-item {
     display: inline-block;
+  }
+  .responsive-image {
+    width: 100%;
   }
   /* panel style */
   .panel {
