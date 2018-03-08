@@ -22,7 +22,8 @@ export default {
   computed: {
     filteredPhotos() {
       if (this.filter) {
-        return [];
+        let exp = new RegExp(this.filter.trim(), 'i');
+        return this.photos.filter(photo => exp.test(photo.titulo));
       } else {
         return this.photos;
       }
