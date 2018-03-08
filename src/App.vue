@@ -3,7 +3,7 @@
     <h1 class="centered">{{ title }}</h1>
     <input type="search" class="filter" v-on:input="filter = $event.target.value" placeholder="Filter by the title of the photo">
     <ul class="photo-list">
-      <li class="photo-list-item" v-for="photo of photos">
+      <li class="photo-list-item" v-for="photo of filteredPhotos">
         <my-panel :title="photo.titulo">
             <img class="responsive-image" :src="photo.url" :alt="photo.title" />
         </my-panel>
@@ -18,6 +18,15 @@ import Panel from './components/shared/panel/Panel.vue';
 export default {
   components: {
     'my-panel': Panel
+  },
+  computed: {
+    filteredPhotos() {
+      if (this.filter) {
+        return [];
+      } else {
+        return this.photos;
+      }
+    }
   },
   data() {
     return {
