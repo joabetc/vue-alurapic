@@ -1,7 +1,7 @@
 <template>
   <div class="page-body">
     <h1 class="centered">{{ title }}</h1>
-    <input type="search" class="filter" v-on:input="filter = $event.target.value" placeholder="Filter by the title of the photo">
+    <input type="search" class="filter" @input="filter = $event.target.value" placeholder="Filter by the title of the photo">
     <ul class="photo-list">
       <li class="photo-list-item" v-for="photo of filteredPhotos">
         <my-panel :title="photo.titulo">
