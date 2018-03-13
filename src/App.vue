@@ -9,7 +9,9 @@
         </li>
       </ul>
     </nav>
-    <router-view></router-view>
+    <transition name="page">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -30,5 +32,11 @@ export default {
     font-family: Helvetica, sans-serif;
     width: 96%;
     margin: 0 auto;
+  }
+  .page-enter, .page-leave-active {
+    opacity: 0;
+  }
+  .page-enter-active, .page.page-leave-active {
+    transition: opacity 4s;
   }
 </style>
