@@ -2,8 +2,11 @@
   <div class="page-body">
     <nav>
       <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/registration">Registration</router-link></li>
+        <li v-for="route in routes">
+          <router-link :to="route.path ? route.path : '/'">
+            {{ route.title }}
+          </router-link>
+        </li>
       </ul>
     </nav>
     <router-view></router-view>
@@ -11,8 +14,14 @@
 </template>
 
 <script>
-export default {
+import { routes } from './routes';
 
+export default {
+  data() {
+    return {
+      routes
+    }
+  }
 }
 </script>
 
