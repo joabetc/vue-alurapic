@@ -1,5 +1,11 @@
 <template>
   <div class="page-body">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/registration">Registration</a></li>
+      </ul>
+    </nav>
     <router-view></router-view>
   </div>
 </template>
