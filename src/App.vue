@@ -2,8 +2,8 @@
   <div class="page-body">
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/registration">Registration</a></li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/registration">Registration</router-link></li>
       </ul>
     </nav>
     <router-view></router-view>
