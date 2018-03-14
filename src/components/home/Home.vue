@@ -6,7 +6,11 @@
       <li class="photo-list-item" v-for="photo of filteredPhotos">
         <my-panel :title="photo.titulo">
             <responsive-image :url="photo.url" :title="photo.title"/>
-            <my-button type="button" label="Remove" @buttonActivated="remove(photo)"/>
+            <my-button 
+              type="button" 
+              label="Remove" 
+              @buttonActivated="remove(photo)"
+              :confirmation="false"/>
         </my-panel>
       </li>
     </ul>

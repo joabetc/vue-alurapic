@@ -4,12 +4,16 @@
 
 <script>
 export default {
-  props: ['type', 'label'],
+  props: ['type', 'label', 'confirmation'],
   methods: {
     triggerAction() {
-      if (confirm('Are you sure?')) {
-        this.$emit('buttonActivated');
+      if (this.confirmation) {
+        if (confirm('Are you sure?')) {
+          this.$emit('buttonActivated');
+        }
+        return;
       }
+      this.$emit('buttonActivated');
     }
   }
 }
