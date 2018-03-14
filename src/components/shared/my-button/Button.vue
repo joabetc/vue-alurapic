@@ -4,7 +4,26 @@
 
 <script>
 export default {
-  props: ['type', 'label', 'confirmation', 'buttonstyle'],
+  props: {
+    type: {
+      required: true,
+      type: String
+    },
+    label: {
+      required: true,
+      type: String
+    },
+    confirmation: {
+      required: false,
+      default: false,
+      type: Boolean
+    },
+    buttonstyle: {
+      required: false,
+      default: 'default',
+      type: String
+    }
+  },
   methods: {
     triggerAction() {
       if (this.confirmation) {
@@ -18,7 +37,7 @@ export default {
   },
   computed: {
     checkStyle() {
-      if (this.buttonstyle == 'default' || this.buttonstyle) return 'button-default';
+      if (this.buttonstyle == 'default') return 'button-default';
       if (this.buttonstyle == 'danger') return 'button-danger';
     }
   }
