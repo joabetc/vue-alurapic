@@ -1,10 +1,17 @@
 <template>
-  <button class="button button-danger" :type="type">{{ label }}</button>
+  <button @click="triggerAction()" class="button button-danger" :type="type">{{ label }}</button>
 </template>
 
 <script>
 export default {
-  props: ['type', 'label']
+  props: ['type', 'label'],
+  methods: {
+    triggerAction() {
+      if (confirm('Are you sure?')) {
+        this.$emit('buttonActivated');
+      }
+    }
+  }
 }
 </script>
 
