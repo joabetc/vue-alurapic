@@ -1,10 +1,10 @@
 <template>
-  <button @click="triggerAction()" class="button button-danger" :type="type">{{ label }}</button>
+  <button @click="triggerAction()" class="button" :class="checkStyle" :type="type">{{ label }}</button>
 </template>
 
 <script>
 export default {
-  props: ['type', 'label', 'confirmation'],
+  props: ['type', 'label', 'confirmation', 'buttonstyle'],
   methods: {
     triggerAction() {
       if (this.confirmation) {
@@ -14,6 +14,12 @@ export default {
         return;
       }
       this.$emit('buttonActivated');
+    }
+  },
+  computed: {
+    checkStyle() {
+      if (this.buttonstyle == 'default' || this.buttonstyle) return 'button-default';
+      if (this.buttonstyle == 'danger') return 'button-danger';
     }
   }
 }

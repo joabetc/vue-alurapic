@@ -10,7 +10,8 @@
               type="button" 
               label="Remove" 
               @buttonActivated="remove(photo)"
-              :confirmation="true"/>
+              :confirmation="true"
+              buttonstyle="danger"/>
         </my-panel>
       </li>
     </ul>
