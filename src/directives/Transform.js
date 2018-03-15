@@ -6,7 +6,8 @@ Vue.directive('my-transform', {
     let current = 0;
 
     el.addEventListener('dblclick', function() {
-      current +=90;
+      let increment = binding.value || 90;
+      current += increment;
       el.style.transform = `rotate(${current}deg)`;
     })
   }
