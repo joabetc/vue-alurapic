@@ -9,14 +9,10 @@ Vue.directive('my-transform', {
       let increment = binding.value || 90;
       let animate = false;
 
-      if (binding.modifiers.animate) {
-        animate = true;
-      }
-
       current += increment;
       el.style.transform = `rotate(${current}deg)`;
 
-      if (animate) el.style.transition = 'transform 0.5s';
+      if (binding.modifiers.animate) el.style.transition = 'transform 0.5s';
 
     })
   }
