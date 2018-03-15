@@ -23,11 +23,16 @@ import Panel from '../shared/panel/Panel.vue';
 import ResponsiveImage from '../shared/responsive-image/ResponsiveImage.vue';
 import Button from '../shared/my-button/Button.vue';
 
+import transform from '../../directives/Transform';
+
 export default {
   components: {
     'my-panel': Panel,
     'responsive-image': ResponsiveImage,
     'my-button': Button
+  },
+  directives: {
+    'my-transform': transform
   },
   computed: {
     filteredPhotos() {
