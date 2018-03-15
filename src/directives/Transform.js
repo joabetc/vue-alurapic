@@ -6,12 +6,11 @@ Vue.directive('my-transform', {
     let current = 0;
 
     el.addEventListener('dblclick', function() {
-      let increment = 90;
+      let increment = binding.value || 90;
       let animate = false;
 
-      if (binding.value) {
-        increment = binding.value.increment;
-        animate = binding.value.animate;
+      if (binding.modifiers.animate) {
+        animate = true;
       }
 
       current += increment;
