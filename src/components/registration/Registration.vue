@@ -30,6 +30,7 @@
 <script>
 import ResponsiveImage from '../shared/responsive-image/ResponsiveImage.vue';
 import Button from '../shared/my-button/Button.vue';
+import Photo from '../../domain/photo/Photo';
 
 export default {
   components: {
@@ -38,21 +39,13 @@ export default {
   },
   data() {
     return {
-      photo: {
-        title: '',
-        url: '',
-        description: ''
-      }
+      photo: new Photo()
     }
   },
   methods: {
     save() {
       console.log(this.photo);
-      this.photo = {
-        title: '',
-        url: '',
-        description: ''
-      }
+      this.photo = new Photo();
     }
   }
 }
