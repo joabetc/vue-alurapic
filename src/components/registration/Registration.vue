@@ -6,16 +6,19 @@
     <form>
       <div class="control">
         <label for="title">Title</label>
-        <input id="title" autocomplete="off">
+        <input id="title" autocomplete="off" 
+          @input="photo.title = $event.target.value">
       </div>
       <div class="control">
         <label for="url">URL</label>
-        <input id="url" autocomplete="off">
+        <input id="url" autocomplete="off" 
+          @input="photo.url = $event.target.value">
         <responsive-image/>
       </div>
       <div class="control">
         <label for="description">Description</label>
-        <textarea id="description" autocomplete="off"></textarea>
+        <textarea id="description" autocomplete="off" 
+          @input="photo.description = $event.target.value"></textarea>
       </div>
       <div class="centered">
         <my-button label="Save" type="submit" />
@@ -35,6 +38,15 @@ export default {
   components: {
     'responsive-image': ResponsiveImage,
     'my-button': Button
+  },
+  data() {
+    return {
+      photo: {
+        title: '',
+        url: '',
+        description: ''
+      }
+    }
   }
 }
 </script>
