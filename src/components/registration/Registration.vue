@@ -10,8 +10,8 @@
       </div>
       <div class="control">
         <label for="url">URL</label>
-        <input id="url" autocomplete="off" v-model="photo.url">
-        <responsive-image/>
+        <input id="url" autocomplete="off" v-model.lazy="photo.url">
+        <responsive-image :url="photo.url" :title="photo.title"/>
       </div>
       <div class="control">
         <label for="description">Description</label>
