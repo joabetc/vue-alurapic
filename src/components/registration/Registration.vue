@@ -3,7 +3,7 @@
     <h1 class="centered">Registration</h1>
     <h2 class="centered"></h2>
 
-    <form>
+    <form @submit.prevent="save()">
       <div class="control">
         <label for="title">Title</label>
         <input id="title" autocomplete="off" 
@@ -46,6 +46,11 @@ export default {
         url: '',
         description: ''
       }
+    }
+  },
+  methods: {
+    save() {
+      console.log(this.photo.title);
     }
   }
 }
