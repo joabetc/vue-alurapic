@@ -7,18 +7,21 @@
       <div class="control">
         <label for="title">Title</label>
         <input id="title" autocomplete="off" 
-          @input="photo.title = $event.target.value">
+          @input="photo.title = $event.target.value"
+          :value="photo.title">
       </div>
       <div class="control">
         <label for="url">URL</label>
         <input id="url" autocomplete="off" 
-          @input="photo.url = $event.target.value">
+          @input="photo.url = $event.target.value"
+          :value="photo.url">
         <responsive-image/>
       </div>
       <div class="control">
         <label for="description">Description</label>
         <textarea id="description" autocomplete="off" 
-          @input="photo.description = $event.target.value"></textarea>
+          @input="photo.description = $event.target.value"
+          :value="photo.description"></textarea>
       </div>
       <div class="centered">
         <my-button label="Save" type="submit" />
@@ -50,7 +53,11 @@ export default {
   },
   methods: {
     save() {
-      console.log(this.photo.title);
+      this.photo = {
+        title: '',
+        url: '',
+        description: ''
+      }
     }
   }
 }
