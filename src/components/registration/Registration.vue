@@ -6,22 +6,16 @@
     <form @submit.prevent="save()">
       <div class="control">
         <label for="title">Title</label>
-        <input id="title" autocomplete="off" 
-          @input="photo.title = $event.target.value"
-          :value="photo.title">
+        <input id="title" autocomplete="off" v-model="photo.title">
       </div>
       <div class="control">
         <label for="url">URL</label>
-        <input id="url" autocomplete="off" 
-          @input="photo.url = $event.target.value"
-          :value="photo.url">
+        <input id="url" autocomplete="off" v-model="photo.url">
         <responsive-image/>
       </div>
       <div class="control">
         <label for="description">Description</label>
-        <textarea id="description" autocomplete="off" 
-          @input="photo.description = $event.target.value"
-          :value="photo.description"></textarea>
+        <textarea id="description" autocomplete="off" v-model="photo.description"></textarea>
       </div>
       <div class="centered">
         <my-button label="Save" type="submit" />
@@ -53,6 +47,7 @@ export default {
   },
   methods: {
     save() {
+      console.log(this.photo);
       this.photo = {
         title: '',
         url: '',
