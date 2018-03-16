@@ -17,7 +17,7 @@
         <label for="description">Description</label>
         <textarea id="description" autocomplete="off"></textarea>
       </div>
-      <div>
+      <div class="centered">
         <my-button label="Save" type="submit" />
         <router-link to="/">
           <my-button label="Back" type="button" />
