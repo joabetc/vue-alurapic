@@ -19,7 +19,7 @@
       </div>
       <div class="centered">
         <my-button label="Save" type="submit" />
-        <router-link to="/">
+        <router-link :to="{ name: 'home' }">
           <my-button label="Back" type="button" />
         </router-link>
       </div>
