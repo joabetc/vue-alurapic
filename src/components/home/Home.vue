@@ -49,6 +49,8 @@ export default {
     remove(photo) {
       this.$http.delete(`http://localhost:3000/v1/fotos/${photo._id}`)
         .then(() => {
+          let index = this.photos.indexOf(photo);
+          this.photos.splice(index, 1);
           this.message = 'Photo was removed successfully!'
         }, err => {
           console.log(err);
