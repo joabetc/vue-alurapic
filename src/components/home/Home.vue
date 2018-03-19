@@ -23,8 +23,10 @@
 import Panel from '../shared/panel/Panel.vue';
 import ResponsiveImage from '../shared/responsive-image/ResponsiveImage.vue';
 import Button from '../shared/my-button/Button.vue';
+import PhotService from '../../domain/photo/PhotoService';
 
 import transform from '../../directives/Transform';
+import PhotoService from '../../domain/photo/PhotoService';
 
 export default {
   components: {
@@ -47,8 +49,8 @@ export default {
   },
   methods: {
     remove(photo) {
-      this.resource
-        .delete({ id: photo._id })
+      this.service
+        .delete(photo._id)
         .then(() => {
           let index = this.photos.indexOf(photo);
           this.photos.splice(index, 1);
@@ -68,10 +70,10 @@ export default {
     }
   },
   created() {
-    this.resource = this.$resource('v1/fotos{/id}');
-    this.resource
-      .query()
-      .then(res => res.json())
+    this.service = new PhotoService(this.$resource);
+
+    this.service
+      .list()
       .then(photos => this.photos = photos, err => console.log(err));
   }
 }
