@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 class="centered">{{ title }}</h1>
+    <p v-show="message" class="centered">{{ message }}</p>
     <input type="search" class="filter" @input="filter = $event.target.value" placeholder="Filter by the title of the photo">
     <ul class="photo-list">
       <li class="photo-list-item" v-for="photo of filteredPhotos">
@@ -46,14 +47,21 @@ export default {
   },
   methods: {
     remove(photo) {
-      alert('Removing ' + photo.titulo);
+      this.$http.delete(`http://localhost:3000/v1/fotos/${photo._id}`)
+        .then(() => {
+          this.message = 'Photo was removed successfully!'
+        }, err => {
+          console.log(err);
+          this.message = 'Failed to removed the photo!';
+        })
     }
   },
   data() {
     return {
       title: 'Alurapic',
       photos: [],
-      filter: ''
+      filter: '',
+      message: ''
     }
   },
   created() {
