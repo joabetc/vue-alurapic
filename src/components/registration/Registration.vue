@@ -44,11 +44,15 @@ export default {
   },
   methods: {
     save() {
-      this.$http.post('v1/fotos', this.photo)
+      this.resource
+        .save(this.photo)
         .then(() => {
           this.photo = new Photo()
         }, err => console.log(err));
     }
+  },
+  created() {
+    this.resource = this.$resource('v1/fotos');
   }
 }
 </script>
