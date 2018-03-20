@@ -2,6 +2,7 @@
   <div>
     <h1 class="centered">Registration</h1>
     <h2 class="centered"></h2>
+    <h2 class="centered">{{ photo.titulo }}</h2>
 
     <form @submit.prevent="save()">
       <div class="control">
