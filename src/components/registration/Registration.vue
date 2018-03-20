@@ -40,7 +40,8 @@ export default {
   },
   data() {
     return {
-      photo: new Photo()
+      photo: new Photo(),
+      id: this.$route.params.id
     }
   },
   methods: {
