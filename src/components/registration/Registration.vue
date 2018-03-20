@@ -3,6 +3,8 @@
     <h1 class="centered">Registration</h1>
     <h2 class="centered">{{ photo.titulo }}</h2>
 
+    <h2 v-if="photo._id" class="centered">Updating</h2>
+    <h2 v-else class="centered">Incluindo</h2>
     <form @submit.prevent="save()">
       <div class="control">
         <label for="title">Title</label>
