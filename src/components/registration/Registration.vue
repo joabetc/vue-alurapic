@@ -8,7 +8,7 @@
     <form @submit.prevent="save()">
       <div class="control">
         <label for="title">Title</label>
-        <input data-vv-as="Title" name="title" v-validate data-vv-rules="required" id="title" autocomplete="off" v-model="photo.titulo">
+        <input data-vv-as="Title" name="title" v-validate data-vv-rules="required|min:3|max:30" id="title" autocomplete="off" v-model="photo.titulo">
         <span class="error" v-show="errors.has('title')">{{ errors.first('title') }}</span>
       </div>
       <div class="control">
