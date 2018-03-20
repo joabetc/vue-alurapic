@@ -8,11 +8,19 @@ import { routes } from './routes'
 import './directives/Transform'
 
 import Veevalidate from 'vee-validate'
+import msg from './en'
 
 Vue.use(VueResource)
 Vue.http.options.root = 'http://localhost:3000';
 Vue.use(VueRouter)
-Vue.use(Veevalidate)
+Vue.use(Veevalidate, {
+  locale: 'en',
+  dictionary: {
+    en: {
+      messages: msg
+    }
+  }
+})
 
 const router = new VueRouter({ 
   routes,
