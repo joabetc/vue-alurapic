@@ -8,11 +8,13 @@
     <form @submit.prevent="save()">
       <div class="control">
         <label for="title">Title</label>
-        <input id="title" autocomplete="off" v-model="photo.titulo">
+        <input name="title" v-validate data-vv-rules="required" id="title" autocomplete="off" v-model="photo.titulo">
+        <span class="error" v-show="errors.has('title')">Title is required</span>
       </div>
       <div class="control">
         <label for="url">URL</label>
-        <input id="url" autocomplete="off" v-model.lazy="photo.url">
+        <input name="url" v-validate data-vv-rules="required" id="url" autocomplete="off" v-model="photo.url">
+        <span class="error" v-show="errors.has('url')">URL is required</span>
         <responsive-image v-show="photo.url" :url="photo.url" :title="photo.titulo"/>
       </div>
       <div class="control">
@@ -83,5 +85,8 @@ export default {
     width: 100%;
     font-size: inherit;
     border-radius: 5px;
+  }
+  .error {
+    color: red;
   }
 </style>
