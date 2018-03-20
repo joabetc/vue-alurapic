@@ -51,6 +51,7 @@ export default {
       this.service
         .save(this.photo)
         .then(() => {
+          if (this.id) this.$router.push({ name: 'home'});
           this.photo = new Photo()
         }, err => console.log(err));
     }
