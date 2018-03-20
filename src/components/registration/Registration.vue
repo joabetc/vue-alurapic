@@ -55,6 +55,11 @@ export default {
   },
   created() {
     this.service = new PhotoService(this.$resource);
+    if (this.id) {
+      this.service
+        .find(this.id)
+        .then(photo => this.photo = photo);
+    }
   }
 }
 </script>
