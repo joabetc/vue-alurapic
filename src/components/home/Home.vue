@@ -77,7 +77,10 @@ export default {
 
     this.service
       .list()
-      .then(photos => this.photos = photos, err => console.log(err));
+      .then(photos => this.photos = photos, err => {
+        console.log(err);
+        this.message = 'It was not possible to retrieve the data from serve! Please try again late.';
+        });
   }
 }
 </script>
