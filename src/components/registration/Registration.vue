@@ -50,12 +50,18 @@ export default {
   },
   methods: {
     save() {
-      this.service
-        .save(this.photo)
-        .then(() => {
-          if (this.id) this.$router.push({ name: 'home'});
-          this.photo = new Photo()
-        }, err => console.log(err));
+      this.$validator
+        .validateAll()
+        .then(success => {
+          if (success) {
+            this.service
+              .save(this.photo)
+              .then(() => {
+                if (this.id) this.$router.push({ name: 'home'});
+                this.photo = new Photo()
+              }, err => console.log(err));
+          }
+        });
     }
   },
   created() {
