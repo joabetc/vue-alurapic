@@ -7,7 +7,9 @@
       <li class="photo-list-item" v-for="photo of filteredPhotos">
         <my-panel :title="photo.titulo">
             <responsive-image :url="photo.url" :title="photo.title" v-my-transform:scale.animate="1.1"/>
-            <my-button type="button" label="update" />
+            <router-link :to="{ name: 'registration' }">
+              <my-button type="button" label="update" />
+            </router-link>
             <my-button 
               type="button" 
               label="Remove" 
