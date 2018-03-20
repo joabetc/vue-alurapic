@@ -8,12 +8,12 @@
     <form @submit.prevent="save()">
       <div class="control">
         <label for="title">Title</label>
-        <input name="title" v-validate data-vv-rules="required" id="title" autocomplete="off" v-model="photo.titulo">
+        <input data-vv-as="Title" name="title" v-validate data-vv-rules="required" id="title" autocomplete="off" v-model="photo.titulo">
         <span class="error" v-show="errors.has('title')">{{ errors.first('title') }}</span>
       </div>
       <div class="control">
         <label for="url">URL</label>
-        <input name="url" v-validate data-vv-rules="required" id="url" autocomplete="off" v-model="photo.url">
+        <input data-vv-as="URL" name="url" v-validate data-vv-rules="required" id="url" autocomplete="off" v-model="photo.url">
         <span class="error" v-show="errors.has('url')">{{ errors.first('url') }}</span>
         <responsive-image v-show="photo.url" :url="photo.url" :title="photo.titulo"/>
       </div>
