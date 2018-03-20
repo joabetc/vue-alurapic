@@ -6,16 +6,16 @@
     <form @submit.prevent="save()">
       <div class="control">
         <label for="title">Title</label>
-        <input id="title" autocomplete="off" v-model="photo.title">
+        <input id="title" autocomplete="off" v-model="photo.titulo">
       </div>
       <div class="control">
         <label for="url">URL</label>
         <input id="url" autocomplete="off" v-model.lazy="photo.url">
-        <responsive-image v-show="photo.url" :url="photo.url" :title="photo.title"/>
+        <responsive-image v-show="photo.url" :url="photo.url" :title="photo.titulo"/>
       </div>
       <div class="control">
         <label for="description">Description</label>
-        <textarea id="description" autocomplete="off" v-model="photo.description"></textarea>
+        <textarea id="description" autocomplete="off" v-model="photo.descricao"></textarea>
       </div>
       <div class="centered">
         <my-button label="Save" type="submit" />
