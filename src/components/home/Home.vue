@@ -58,10 +58,7 @@ export default {
           let index = this.photos.indexOf(photo);
           this.photos.splice(index, 1);
           this.message = 'Photo was removed successfully!'
-        }, err => {
-          console.log(err);
-          this.message = 'Failed to removed the photo!';
-        })
+        }, err => this.message = err.message);
     }
   },
   data() {
@@ -77,10 +74,7 @@ export default {
 
     this.service
       .list()
-      .then(photos => this.photos = photos, err => {
-        console.log(err);
-        this.message = 'It was not possible to retrieve the data from serve! Please try again late.';
-        });
+      .then(photos => this.photos = photos, err => this.message = err.message);
   }
 }
 </script>

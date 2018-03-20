@@ -7,7 +7,10 @@ export default class PhotoService {
   list() {
     return this._resource
       .query()
-      .then(res => res.json());
+      .then(res => res.json(), err => {
+        console.log(err);
+        throw new Error('It was not possible to retrieve the photos');
+      });
   }
 
   save(photo) {
@@ -22,7 +25,11 @@ export default class PhotoService {
 
   delete(id) {
     return this._resource
-      .delete({ id });
+      .delete({ id })
+      .then(null, err => {
+        console.log(err);
+        throw new Error('It was not possible to remove the photo');
+      });
   }
 
   find(id) {
