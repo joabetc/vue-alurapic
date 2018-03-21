@@ -4,7 +4,7 @@
     <p v-show="message" class="centered">{{ message }}</p>
     <input type="search" class="filter" @input="filter = $event.target.value" placeholder="Filter by the title of the photo">
     <ul class="photo-list">
-      <li class="photo-list-item" v-for="photo of filteredPhotos">
+      <li class="photo-list-item" v-for="photo of filteredPhotos" :key="photo._id">
         <my-panel :title="photo.titulo">
             <responsive-image :url="photo.url" :title="photo.title" v-my-transform:scale.animate="1.1"/>
             <router-link :to="{ name: 'update', params: { id: photo._id } }">
