@@ -44,7 +44,9 @@ export default {
 }
 </script>
 
-<style>
+<style scope lang="scss">
+  $cor: firebrick;
+
   .button {
     display: inline-block;
     padding: 10px;
@@ -53,7 +55,7 @@ export default {
     font-size: 1.2em;
   }
   .button-danger {
-    background: firebrick;
+    background: $cor;
     color: white;
   }
   .button-default {
