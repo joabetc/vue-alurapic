@@ -15,6 +15,8 @@ import './assets/css/test.css'
 
 import './assets/js/test.js'
 
+import 'bootstrap/dist/js/bootstrap.js'
+
 Vue.use(VueResource)
 Vue.http.options.root = 'http://localhost:3000';
 Vue.use(VueRouter)
