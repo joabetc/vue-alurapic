@@ -10,6 +10,8 @@ import './directives/Transform'
 import Veevalidate from 'vee-validate'
 import msg from './en'
 
+import 'bootstrap/dist/css/bootstrap.css'
+
 Vue.use(VueResource)
 Vue.http.options.root = 'http://localhost:3000';
 Vue.use(VueRouter)
