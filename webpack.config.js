@@ -19,7 +19,8 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-          }
+          },
+          esModule: false
           // other vue-loader options go here
         }
       },
