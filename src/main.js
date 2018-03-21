@@ -11,6 +11,7 @@ import Veevalidate from 'vee-validate'
 import msg from './en'
 
 import 'bootstrap/dist/css/bootstrap.css'
+import './assets/css/test.css'
 
 Vue.use(VueResource)
 Vue.http.options.root = 'http://localhost:3000';
