@@ -45,21 +45,5 @@ export default {
 </script>
 
 <style scope lang="scss">
-  $cor: firebrick;
-
-  .button {
-    display: inline-block;
-    padding: 10px;
-    border-radius: 3px;
-    margin: 10px;
-    font-size: 1.2em;
-  }
-  .button-danger {
-    background: $cor;
-    color: white;
-  }
-  .button-default {
-    background: darkcyan;
-    color: white;
-  }
+  @import './Button.scss';
 </style>
