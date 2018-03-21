@@ -13,6 +13,8 @@ import msg from './en'
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/css/test.css'
 
+import './assets/js/test.js'
+
 Vue.use(VueResource)
 Vue.http.options.root = 'http://localhost:3000';
 Vue.use(VueRouter)
